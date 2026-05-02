@@ -1,0 +1,5 @@
+Dies ist ein Beispieldokument zum Testen des RAG-Systems.
+
+Es enthält mehrere Absätze, um das Chunking-Verhalten zu testen.
+
+Der Dokumentenlader sollte dies korrekt als Textdatei erkennen und alle Inhalte mit entsprechenden Metadaten extrahieren.

@@ -1,0 +1,79 @@
+{
+  "experiment_id": "EXP-002",
+  "name": "Cross-Lingual Retrieval Capability",
+  "timestamp": "2026-01-26T11:44:39.264839",
+  "configuration": {
+    "embedding_model": "intfloat/multilingual-e5-large",
+    "chunk_size": 500,
+    "chunk_overlap": 50,
+    "k": 2
+  },
+  "metrics": {
+    "total_tests": 4,
+    "successes": 3,
+    "success_rate": 75.0
+  },
+  "finding": "PASS: Cross-lingual retrieval effective",
+  "detail": "multilingual-e5-large achieves 75% cross-lingual retrieval",
+  "limitation": null,
+  "results": [
+    {
+      "test_id": 1,
+      "query": "Was testet das RAG-System?",
+      "query_lang": "de",
+      "detected_lang": "de",
+      "target_lang": "en",
+      "sources": [
+        "data/sample_docs/sample_de.txt",
+        "data/sample_docs/sample.txt"
+      ],
+      "cross_lingual_success": true,
+      "description": "German query \u2192 English document (RAG system testing)"
+    },
+    {
+      "test_id": 2,
+      "query": "What does the document loader test?",
+      "query_lang": "en",
+      "detected_lang": "en",
+      "target_lang": "de",
+      "sources": [
+        "data/sample_docs/sample.txt",
+        "data/sample_docs/sample_de.txt"
+      ],
+      "cross_lingual_success": true,
+      "description": "English query \u2192 German document (loader testing)"
+    },
+    {
+      "test_id": 3,
+      "query": "Welche Abschnitte hat das Markdown-Dokument?",
+      "query_lang": "de",
+      "detected_lang": "de",
+      "target_lang": "en",
+      "sources": [
+        "data/sample_docs/sample_de.md",
+        "data/sample_docs/sample.md"
+      ],
+      "cross_lingual_success": true,
+      "description": "German query \u2192 English document (markdown sections)"
+    },
+    {
+      "test_id": 4,
+      "query": "What are the bullet points in the example?",
+      "query_lang": "en",
+      "detected_lang": "en",
+      "target_lang": "de",
+      "sources": [
+        "data/sample_docs/sample.md",
+        "data/sample_docs/sample.txt"
+      ],
+      "cross_lingual_success": false,
+      "description": "English query \u2192 German document (bullet points)"
+    }
+  ],
+  "references": [
+    "https://arxiv.org/html/2502.13595v4",
+    "https://arxiv.org/html/2402.05672v1",
+    "https://arxiv.org/html/2510.00908v1",
+    "https://huggingface.co/intfloat/multilingual-e5-large"
+  ]
+}

@@ -1,0 +1,5 @@
+This is a sample text document for testing the RAG system.
+
+It contains multiple paragraphs to test chunking behavior.
+
+The document loader should correctly identify this as a text file and extract all content with appropriate metadata.
