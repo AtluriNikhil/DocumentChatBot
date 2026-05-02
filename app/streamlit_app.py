@@ -1,12 +1,14 @@
 """Streamlit UI for RAG Document Assistant."""
 
-import streamlit as st
-import requests
-from typing import Dict, List, Any, Optional
 import time
+import os
+from typing import Any, Dict, List, Optional
+
+import requests
+import streamlit as st
 
 # Configuration
-API_BASE_URL = "http://127.0.0.1:8000"
+API_BASE_URL = os.getenv("API_BASE_URL", "http://127.0.0.1:8000")
 API_TIMEOUT = 30  # seconds
 
 # Page config
